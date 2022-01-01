@@ -2,9 +2,19 @@
 # I am using zsh instead of bash.  I was having some troubles using bash with
 # arrays.  Didn't want to investigate, so I just did zsh
 pushd $DOTFILES
+clean_folders="zsh"
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do
+    for cln_folder in $clean_folders; do
+        for file in `ls -a $cln_folder`; do
+	    if ! [ -d $file ] ; then
+                ! [ -e $HOME/$file ] || rm $HOME/$file
+	    fi	    
+	done    
+    done
+
     stow -D $folder
     stow $folder
+
 done
 popd

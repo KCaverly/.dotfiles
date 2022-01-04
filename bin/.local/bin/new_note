@@ -1,0 +1,36 @@
+#/bin/bash
+
+helpFunction()
+{
+    echo ""
+    echo "Usage: $0 -n name"
+    echo -e "\t-n Name of New Note"
+    exit 1
+}
+
+while getopts "n:" opt
+do
+  case "$opt" in
+    n ) name="$OPTARG" ;;
+    ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
+  esac
+done
+
+if [ -z $name ]
+then 
+  echo "some or all of the parameters are empty";
+  exit 1
+  helpFunction
+fi
+
+# Check if File Exists
+if [ -f $HOME/personal/kb/$name.md ]
+then
+  echo "Note already exists, please choose new name for note."
+  exit 1
+fi
+
+# Create File if It Doesnt Exist
+
+touch $HOME/personal/kb/$name.md
+echo $HOME/personal/kb/$name.md

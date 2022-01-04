@@ -104,3 +104,6 @@ alias vim="nvim"
 # FF Plugin KCAVERLY CUSTOM
 function ff { cd $(source ff_script) }
 export ff
+
+function nn() { new_path=$(source $HOME/.local/bin/new_note "$@") && cd $HOME/personal/kb && nvim $new_path }
+export nn

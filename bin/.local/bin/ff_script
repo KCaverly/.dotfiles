@@ -1,1 +1,4 @@
-(find ~/personal -maxdepth 1 -type d && find ~/work -maxdepth 2 -type d && find ~/.dotfiles -maxdepth 2 -type d) | fzf 
+
+(([ -d ~/personal ] && find ~/personal -maxdepth 1 -type d || command) && 
+([ -d ~/work ] && find ~/work -maxdepth 2 -type d || command ) &&
+([ -d ~/.dotfiles ] && find ~/.dotfiles -maxdepth 3 -type d -not -path "*/.git/*" || command )) | fzf

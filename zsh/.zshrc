@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.poetry/bin:$HOME/.cargo/bin:$HOME/.nix-profile/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.poetry/bin:$HOME/.cargo/bin:$HOME/.nix-profile/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/kcaverly/.oh-my-zsh"

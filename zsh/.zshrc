@@ -99,7 +99,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim="nvim"
+alias python="python3.6"
+alias python3="python3.6"
+
+alias vim="nvim -c ':Telescope workspaces'"
+alias nvim="nvim -c ':Telescope workspaces'"
 
 # FF Plugin KCAVERLY CUSTOM
 function ff { cd $(source ff_script) }
@@ -107,3 +111,5 @@ export ff
 
 function nn() { new_path=$(source $HOME/.local/bin/new_note "$@") && cd $HOME/personal/kb && nvim $new_path }
 export nn
+
+export PATH="$HOME/.poetry/bin:$PATH"

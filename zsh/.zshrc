@@ -103,7 +103,7 @@ alias python="python3.6"
 alias python3="python3.6"
 
 alias vim="nvim -c ':Telescope workspaces'"
-alias nvim="nvim -c ':Telescope workspaces'"
+alias nvim="nvim"
 
 # FF Plugin KCAVERLY CUSTOM
 function ff { cd $(source ff_script) }

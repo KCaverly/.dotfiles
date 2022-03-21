@@ -99,9 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias python="python3.6"
-alias python3="python3.6"
-
 alias vim="nvim -c ':Telescope workspaces'"
 alias nvim="nvim"
 
@@ -113,3 +110,13 @@ function nn() { new_path=$(source $HOME/.local/bin/new_note "$@") && cd $HOME/pe
 export nn
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+# PYENV Config
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+fi
+
+if [ -e /home/kcaverly/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kcaverly/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

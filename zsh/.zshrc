@@ -120,3 +120,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 if [ -e /home/kcaverly/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kcaverly/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# GO Config
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

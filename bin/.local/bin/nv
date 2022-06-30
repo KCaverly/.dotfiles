@@ -1,7 +1,6 @@
 
 if [ -f "./pyproject.toml" ]; then
-  poetry shell
-  nvim
+  poetry run nvim
 else
   nvim
 fi

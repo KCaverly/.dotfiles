@@ -1,0 +1,7 @@
+
+if [ -f "./pyproject.toml" ]; then
+  poetry shell
+  nvim
+else
+  nvim
+fi

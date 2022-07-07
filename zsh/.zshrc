@@ -103,7 +103,7 @@ alias vim="nvim -c ':Telescope workspaces'"
 alias nvim="nvim"
 
 # FF Plugin KCAVERLY CUSTOM
-function ff { cd $(source ff_script) }
+function ff { source ff_script }
 export ff
 
 function nn() { new_path=$(source $HOME/.local/bin/new_note "$@") && cd $HOME/personal/kb && nvim $new_path }
@@ -125,3 +125,5 @@ if [ -e /home/kcaverly/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kcaverl
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+source /home/kcaverly/.pyenv/.pyenvrc
+source ~/.antigenrc

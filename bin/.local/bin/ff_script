@@ -25,7 +25,10 @@ active_session=$(tmux has-session -t $MAIN_SESSION 2>&1)
 if [ -z $TMUX ]; then
 
   if [ "$(echo $active_session | grep -c 'no server')" -eq "1" ]; then
-    tmux new-session -s $MAIN_SESSION -n $selected_name
+    tmux new-session -d -s $MAIN_SESSION -n $selected_name
+    tmux send-keys -t $MAIN_SESSION:$selected_name "cd $selected" C-m
+    tmux send-keys -t $MAIN_SESSION:$selected_name "clear" C-m
+    tmux attach -t $MAIN_SESSION:$selected_name
   elif [ "$(echo $active_window | grep -c 't find')" -eq "0" ]; then
     tmux attach -t $MAIN_SESSION:$selected_name
   else
@@ -36,7 +39,8 @@ if [ -z $TMUX ]; then
     fi
     tmux new-window -t $MAIN_SESSION -n $selected_name
     tmux attach -t $MAIN_SESSION:$selected_name
-    cd $selected
+    tmux send-keys -t $MAIN_SESSION:$selected_name "cd $selected" C-m
+    tmux send-keys -t $MAIN_SESSION:$selected_name "clear" C-m
   fi
 else
   if [ "$(echo $active_window | grep -c 't find')" -eq "0" ]; then
@@ -44,7 +48,8 @@ else
   else
     tmux new-window -t $MAIN_SESSION -n $selected_name
     tmux select-window -t $selected_name
-    cd $selected
+    tmux send-keys -t $MAIN_SESSION:$selected_name "cd $selected" C-m
+    tmux send-keys -t $MAIN_SESSION:$selected_name "clear" C-m
   fi
 fi
 

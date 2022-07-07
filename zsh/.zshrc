@@ -99,8 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim="nvim -c ':Telescope workspaces'"
-alias nvim="nvim"
 
 # FF Plugin KCAVERLY CUSTOM
 function ff { source ff_script }
@@ -125,5 +123,3 @@ if [ -e /home/kcaverly/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kcaverl
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-source /home/kcaverly/.pyenv/.pyenvrc
-source ~/.antigenrc

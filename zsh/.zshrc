@@ -123,3 +123,6 @@ if [ -e /home/kcaverly/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kcaverl
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# Tmux Sessionizer
+bindkey -s ^f "ff\n"

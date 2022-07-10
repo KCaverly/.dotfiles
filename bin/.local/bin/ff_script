@@ -24,6 +24,7 @@ active_session=$(tmux has-session -t $MAIN_SESSION 2>&1)
 # If currently outside TMUX
 if [ -z $TMUX ]; then
 
+  # If not in TMUX and TMUX server is not running
   if [ "$(echo $active_session | grep -c 'no server')" -eq "1" ]; then
     tmux new-session -d -s $MAIN_SESSION -n $selected_name
     tmux send-keys -t $MAIN_SESSION:$selected_name "cd $selected" C-m
@@ -46,6 +47,7 @@ else
   if [ "$(echo $active_window | grep -c 't find')" -eq "0" ]; then
     tmux select-window -t $selected_name
   else
+    tmux new-session -d -s $MAIN_SESSION
     tmux new-window -t $MAIN_SESSION -n $selected_name
     tmux select-window -t $selected_name
     tmux send-keys -t $MAIN_SESSION:$selected_name "cd $selected" C-m

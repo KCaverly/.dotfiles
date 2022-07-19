@@ -100,12 +100,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# FF Plugin KCAVERLY CUSTOM
+# Peaches
 function ff { peaches projects }
 export ff
 
 function fs { peaches ssh }
 export fs
+
+function fn { nv }
+export fn
 
 function nn() { new_path=$(source $HOME/.local/bin/new_note "$@") && cd $HOME/personal/kb && nvim $new_path }
 export nn
@@ -130,3 +133,4 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # Tmux Sessionizer
 bindkey -s ^f "ff\n"
 bindkey -s ^g "fs\n"
+bindkey -s ^n "fn\n"
